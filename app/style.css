@@ -1,0 +1,46 @@
+/*[v-cloak] {
+	display: none;
+}*/
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+.checkbox {
+	margin-right: 12px;
+}
+
+#toDoInput {
+	font-size: 14px;
+	margin-left: 12px;
+	padding: 16px;
+	width: 500px;
+}
+
+ul {
+	color: #222;
+	font-size: 14px;
+	list-style: none;
+	margin: auto;
+	padding: 24px;
+}
+
+li {
+	background-color: #ccc;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	cursor: pointer;
+	margin: 8px;
+	max-height: 50px;
+	padding: 16px;
+	text-align: left;
+}
