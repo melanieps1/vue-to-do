@@ -4,19 +4,34 @@
 	<title>Vue To Do</title>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css></script>
 </head>
 <body>
 
+	<h1>Vue To Do List</h1>
+
 	<div id="main" v-cloak>
-		
-		<h1>Vue To Do List</h1>
 
-		<p>Enter in a to do item: <input id="toDoInput" type="text" v-model="toDo"></p>
+		<input class="toDoInput"
+			type="text"
+			v-model="toDoItem"
+			v-on:keyup.enter="addTask()"
+			placeholder="Enter in a to do item">
 
-		<ul id="toDoList">
-			<!-- We bind it to an active class and compare it to a field that is true/false -->
-			<li v-for="toDo in toDoList"><input type="checkbox" class="checkbox">{{ toDo }}</li>
-		</ul>
+		<div class="listSection">
+			
+			<ul id="toDoList">
+				<li v-for="toDoItem in toDoList" class="toDoItem">
+					<input type="checkbox" class="checkbox" v-model="completeTask()">
+					<label>{{ toDoItem.name }}</label>
+					<!-- TO DO: Make sure icon font works -->
+					<button class="delete" v-on:click="deleteTask(toDoItem)">X</button>
+				</li>
+			</ul>
+
+			<!-- <pre>{{ $data }}</pre> -->
+
+		</div>
 
 	</div>
 

@@ -3,29 +3,47 @@ var demo = new Vue ({
 	el: '#main',
 
 	data: {
-		toDo = ''
+		toDoItem: '',
+		toDoList: []
 	},
 
 	methods: {
 
 		addTask: function() {
 
-			// Converts what is typed in input box into a new to do at the bottom of the list
+			var name = this.toDoItem.trim();
 
-		}
-
-		completeTask: function() {
-
-			// Ability to check off to do item with checkbox.  Moves to completed section
-
-		}
+			if (name) {
+				this.toDoList.push({
+				title: name,
+				completed: false		
+				})
+				this.toDoItem = '';
+			}
+		},
 
 		deleteTask: function() {
+			var index = this.toDoList.indexOf(toDoItem);
+      		this.toDoList.splice(index, 1);
+		},
 
-			// Deletes to do when clicking on X or trash icon.  TBD.
+		completeTask: function() {
+			this.toDoList
+				completed: true
 
 		}
 
+		// editTask: function() {
+
+		// 	// NTH Ability to click into to do item and edit the name of it.
+
+		// }
+
+		// showHideComplete: function() {
+
+		// 	// NTH Shows or hides the completed section and the to do's that are in it.
+
+		// }
 	}
 
 });

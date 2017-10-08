@@ -6,12 +6,12 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
-h1 {
-	margin-bottom: 40px;
+#main {
 	text-align: center;
 }
 
-p {
+h1 {
+	margin-bottom: 40px;
 	text-align: center;
 }
 
@@ -19,9 +19,9 @@ p {
 	margin-right: 12px;
 }
 
-#toDoInput {
+.toDoInput {
 	font-size: 14px;
-	margin-left: 12px;
+	margin: auto;
 	padding: 16px;
 	width: 500px;
 }
