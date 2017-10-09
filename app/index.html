@@ -21,11 +21,17 @@
 		<div class="listSection">
 			
 			<ul id="toDoList">
-				<li v-for="toDoItem in toDoList" class="toDoItem">
+				<li
+					is="toDoItem"
+					v-bind:title="toDoItem.title"
+					v-bind:id="toDoItem.id"
+					v-bind:remove-task="removeTask"
+					v-for="toDoItem in toDoList"
+					class="toDoItem">
+
 					<!-- <input type="checkbox" class="checkbox" v-model="completeTask()"> -->
-					{{ toDoItem.title }}
 					<!-- TO DO: Get icon font to work (deleted for now) -->
-					<button type="button" class="delete" v-on:click="deleteTask(toDoItem.id)">X</button>
+					
 				</li>
 			</ul>
 

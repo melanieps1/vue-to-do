@@ -1,3 +1,15 @@
+Vue.component('toDoItem', {
+
+	// Template for componentwill be the HTML that displays (HTML within <li>)
+	// These are generic HTML names so they can be applied in multiple places (beyond to do list)
+
+	template: '<li>{{ title }}<button type="button" v-on:click="removeTask(id)" class="remove">X</button></li>',
+		// FYI: camelCase caused errors for functions.  Had to change removeTask to remove-task.
+
+	props: ['title', 'id', 'removeTask']
+
+});
+
 var demo = new Vue ({
 
 	el: '#main',
@@ -26,7 +38,7 @@ var demo = new Vue ({
 			this.toDoItem = '';
 		},
 
-		deleteTask: function(id) {
+		removeTask: function(id) {
 			var index = this.findTask(id);
   		this.toDoList.splice(index, 1);
 		},
