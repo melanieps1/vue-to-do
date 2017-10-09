@@ -22,15 +22,23 @@
 			
 			<ul id="toDoList">
 				<li v-for="toDoItem in toDoList" class="toDoItem">
-					<!-- <input type="checkbox" class="checkbox" v-model="completeTask()"> -->
+					<input type="checkbox" class="checkbox" v-model="completeTask()" v-on:click="completeTask()">
 					{{ toDoItem.title }}
 					<!-- TO DO: Get icon font to work (deleted for now) -->
 					<button type="button" class="delete" v-on:click="deleteTask(toDoItem.id)">X</button>
 				</li>
 			</ul>
 
-			<!-- <pre>{{ $data }}</pre> -->
+		</div>
 
+		<div class="completedSection">
+			<h2>Completed Tasks</h2>
+			<ul>
+				<li v-for="toDoItem in completedList" class="toDoItem">
+					<!-- <input type="checkbox" class="checkbox" v-model="completeTask()"> -->
+					{{ toDoItem.title }}
+				</li>
+			</ul>
 		</div>
 
 	</div>

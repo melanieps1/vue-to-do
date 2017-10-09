@@ -5,7 +5,9 @@ var demo = new Vue ({
 	data: {
 		toDoItem: '',
 		toDoList: [],
-		nextTaskId: 0
+		nextTaskId: 0,
+		completedList: [],
+		completedTaskId: 0
 	},
 
 	methods: {
@@ -19,9 +21,9 @@ var demo = new Vue ({
 			// More scalable way for new features
 
 			this.toDoList.push({
-			id: this.nextTaskId++,
-			title: this.toDoItem
-			// completed: false
+				id: this.nextTaskId++,
+				title: this.toDoItem,
+				completed: false
 			});
 			this.toDoItem = '';
 		},
@@ -35,14 +37,18 @@ var demo = new Vue ({
 			return this.toDoList.findIndex(function(toDoItem) {
 				return id === toDoItem.id;
 			});
-		}
+		},
 
-		// completeTask: function() {
-		// 	if (this.toDoList == completed: true) {
+		completeTask: function(completed) {
+			if (completed == true) {
+				this.completedList.push({
+					id: this.completedTaskId++,
+					title: this.toDoItem,
+					completed: true
+				});
+			}
 
-		// }
-
-		// },
+		},
 
 		// editTask: function() {
 
