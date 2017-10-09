@@ -11,27 +11,30 @@ var demo = new Vue ({
 
 		addTask: function() {
 
-			var name = this.toDoItem.trim();
+			this.toDoList.push(this.toDoItem)
+			this.toDoItem = '';
 
-			if (name) {
-				this.toDoList.push({
-				title: name,
-				completed: false		
-				})
-				this.toDoItem = '';
-			}
+			// var name = this.toDoItem.trim();
+
+			// if (name) {
+			// 	this.toDoList.push({
+			// 	title: name,
+			// 	completed: false		
+			// 	})
+			// 	this.toDoItem = '';
+			// }
 		},
 
 		deleteTask: function() {
-			var index = this.toDoList.indexOf(toDoItem);
+			var index = this.toDoList.indexOf();
       		this.toDoList.splice(index, 1);
 		},
 
-		completeTask: function() {
-			this.toDoList
-				completed: true
+		// completeTask: function() {
+		// 	this.toDoList
+		// 		completed: true
 
-		}
+		// }
 
 		// editTask: function() {
 
