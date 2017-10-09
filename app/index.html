@@ -23,9 +23,9 @@
 			<ul id="toDoList">
 				<li v-for="toDoItem in toDoList" class="toDoItem">
 					<!-- <input type="checkbox" class="checkbox" v-model="completeTask()"> -->
-					<label>{{ toDoItem }}</label>
+					{{ toDoItem.title }}
 					<!-- TO DO: Get icon font to work (deleted for now) -->
-					<button class="delete" v-on:click="deleteTask(toDoItem)">X</button>
+					<button type="button" class="delete" v-on:click="deleteTask(toDoItem.id)">X</button>
 				</li>
 			</ul>
 

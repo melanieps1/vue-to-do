@@ -4,43 +4,51 @@ var demo = new Vue ({
 
 	data: {
 		toDoItem: '',
-		toDoList: []
+		toDoList: [],
+		nextTaskId: 0
 	},
 
 	methods: {
 
 		addTask: function() {
 
-			this.toDoList.push(this.toDoItem)
+			// Easy way
+			// this.toDoList.push(this.toDoItem)
+			// this.toDoItem = '';
+
+			// More scalable way for new features
+
+			this.toDoList.push({
+			id: this.nextTaskId++,
+			title: this.toDoItem
+			// completed: false
+			});
 			this.toDoItem = '';
-
-			// var name = this.toDoItem.trim();
-
-			// if (name) {
-			// 	this.toDoList.push({
-			// 	title: name,
-			// 	completed: false		
-			// 	})
-			// 	this.toDoItem = '';
-			// }
 		},
 
-		deleteTask: function() {
-			var index = this.toDoList.indexOf();
-      		this.toDoList.splice(index, 1);
+		deleteTask: function(id) {
+			var index = this.findTask(id);
+  		this.toDoList.splice(index, 1);
 		},
+
+		findTask: function(id) {
+			return this.toDoList.findIndex(function(toDoItem) {
+				return id === toDoItem.id;
+			});
+		}
 
 		// completeTask: function() {
-		// 	this.toDoList
-		// 		completed: true
+		// 	if (this.toDoList == completed: true) {
 
 		// }
+
+		// },
 
 		// editTask: function() {
 
 		// 	// NTH Ability to click into to do item and edit the name of it.
 
-		// }
+		// },
 
 		// showHideComplete: function() {
 
